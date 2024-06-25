@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kinetic Object Simulation</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <style>
+    body { margin: 0; }
+    canvas { display: block; }
+    button {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      padding: 5px 10px;
+      background-color: lightgrey;
+      color: black;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+    }
+    button:hover {
+      background-color: rgb(5, 254, 250);
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+  <button id="saveButton">Save Log</button>
+  <script src="js/002_scene.js"></script>
+  <script src="js/002_fractalObject.js"></script>
+  <script src="js/002_weather.js"></script>
+  <script src="js/002_trail.js"></script>
+  <script src="js/002_log.js"></script>
+  <script src="js/002_animate.js"></script>
+</body>
+</html>

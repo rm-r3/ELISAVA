@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Wireframe Globe with Continents and Time Zones</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://d3js.org/d3-geo.v1.min.js"></script>
+  <style>
+    body { margin: 0; }
+    canvas { display: block; }
+    button {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      padding: 5px 10px;
+      background-color: lightgrey;
+      color: black;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+    }
+    button:hover {
+      background-color: rgb(5, 254, 250);
+    }
+  </style>
+  <link rel="icon" type="image/png" href="data/favicon_white.png"> <!-- Add this line -->
+</head>
+<body>
+  <div id="container"></div>
+  <button id="saveButton">Save Log</button>
+  <script src="js/002_scene.js"></script>
+  <script src="js/002_continents.js"></script>
+  <script src="js/002_routes.js"></script>
+  <script src="js/002_animate.js"></script>
+</body>
+</html>

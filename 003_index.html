@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Globe with Continents</title>
+  <script src="https://unpkg.com/globe.gl"></script>
+  <style>
+    body { margin: 0; }
+    #globeViz { width: 100vw; height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="globeViz"></div>
+
+  <script>
+    const world = Globe()
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
+      .polygonCapColor(() => 'rgba(0, 204, 255, 0.75)')
+      .polygonSideColor(() => 'rgba(0, 204, 255, 0.25)')
+      .polygonStrokeColor(() => '#040299')
+      (document.getElementById('globeViz'));
+
+    fetch('data/ne_10m_admin_0_countries.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+      })
+      .then(countries => {
+        world.polygonsData(countries.features);
+      })
+      .catch(error => console.error('Error loading GeoJSON data:', error));
+  </script>
+</body>
+</html>
